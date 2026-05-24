@@ -8,6 +8,7 @@ import { portfolioData } from "@/lib/portfolio-data";
 export function HeroSection() {
   const { achievement, badges, ctas, name, summary, title } = portfolioData;
   const combinedSummary = `${summary} ${achievement.detail}`;
+  const emailHref = ctas.email;
 
   return (
     <section id="top" className="space-y-8">
@@ -62,8 +63,11 @@ export function HeroSection() {
 
                 <div className="flex flex-col gap-3 sm:flex-row">
                   <a
-                    href={ctas.email}
+                    href={emailHref}
                     aria-label={`Send email to ${portfolioData.contact.email}`}
+                    onClick={() => {
+                      window.location.href = emailHref;
+                    }}
                     className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[var(--accent)] px-5 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-glow dark:bg-white dark:text-slate-950"
                   >
                     Send Email

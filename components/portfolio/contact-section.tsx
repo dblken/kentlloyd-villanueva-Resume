@@ -15,14 +15,14 @@ export function ContactSection() {
 
       <Reveal>
         <div className="glass-panel rounded-[28px] p-6 sm:p-8">
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             <div className="rounded-[22px] border border-[var(--border)] bg-[var(--background-elevated)] p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 Email
               </p>
               <a
                 href={`mailto:${portfolioData.contact.email}`}
-                className="mt-4 block text-sm leading-7 font-medium text-[var(--text)] transition hover:text-[var(--text-soft)]"
+                className="mt-4 block break-all text-sm leading-7 font-medium text-[var(--text)] transition hover:text-[var(--text-soft)]"
               >
                 {portfolioData.contact.email}
               </a>
