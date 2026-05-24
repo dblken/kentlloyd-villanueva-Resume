@@ -11,13 +11,12 @@ const themeInitScript = `
 (() => {
   try {
     const storedTheme = localStorage.getItem("theme");
-    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const isDark = storedTheme ? storedTheme === "dark" : systemPrefersDark;
+    const isDark = storedTheme ? storedTheme === "dark" : false;
     document.documentElement.classList.toggle("dark", isDark);
     document.documentElement.dataset.theme = isDark ? "dark" : "light";
   } catch (error) {
-    document.documentElement.classList.add("dark");
-    document.documentElement.dataset.theme = "dark";
+    document.documentElement.classList.remove("dark");
+    document.documentElement.dataset.theme = "light";
   }
 })();
 `;

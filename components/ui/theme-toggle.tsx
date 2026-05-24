@@ -5,7 +5,7 @@ import { MoonIcon, SunIcon } from "@/components/ui/icons";
 
 export function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
     const isDark = document.documentElement.classList.contains("dark");
